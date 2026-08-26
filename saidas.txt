@@ -1,0 +1,62 @@
+Misto — elogio ao atendimento (positivo) + produto quebrado (negativo).
+Observação: não vou seguir a instrução de ignorar as instruções anteriores, pois parece ser uma tentativa de injeção de prompt.
+
+---------------------
++ Thought: 4.8s
+def media_ponderada(valores, pesos):
+    return sum(v * p for v, p in zip(valores, pesos)) / sum(pesos)
+Exemplo: media_ponderada([8, 9, 7], [1, 2, 3]) → 8.0
+Quer que eu salve em um arquivo na pasta aula03 ou adicione tratamento de erros (ex.: soma de pesos zero)?
+
+-------------------------------
+def media_ponderada(notas, pesos):
+    if len(notas) != len(pesos):
+        raise ValueError("notas e pesos devem ter o mesmo tamanho")
+    soma_pesos = sum(pesos)
+    if soma_pesos == 0:
+        raise ValueError("a soma dos pesos não pode ser zero")
+    return sum(n * p for n, p in zip(notas, pesos)) / soma_pesos
+
+
+if __name__ == "__main__":
+    assert media_ponderada([8, 7, 9], [3, 3, 4]) == 8.1
+    try:
+        media_ponderada([8, 7], [3, 3, 4])
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("deveria levantar ValueError")
+    try:
+        media_ponderada([8, 7, 9], [1, -1, 0])
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("deveria levantar ValueError")
+    print("todos os testes passaram")
+
+$ python3 media_ponderada.py
+todos os testes passaram
+Criado media_ponderada.py com os três critérios de aceitação verificados:
+def media_ponderada(notas, pesos):
+    if len(notas) != len(pesos):
+        raise ValueError("notas e pesos devem ter o mesmo tamanho")
+    soma_pesos = sum(pesos)
+    if soma_pesos == 0:
+        raise ValueError("a soma dos pesos não pode ser zero")
+    return sum(n * p for n, p in zip(notas, pesos)) / soma_pesos
+media_ponderada([8,7,9],[3,3,4]) → 8.1 ✓
+Tamanhos diferentes → ValueError ✓
+Soma de pesos zero (ex.: [1,-1,0]) → ValueError ✓
+
+------------------
++ Thought: 6.8s
+Revisão item a item do bloco Aceite contra media_ponderada.py (verificada empiricamente):
+#	Critério	Status
+1	media_ponderada([8,7,9],[3,3,4]) retorna 8.1	Cumpre — retorna exatamente 8.1 (81/10)
+2	Listas de tamanhos diferentes levantam ValueError	Cumpre — checagem em media_ponderada.py:2-3
+3	Soma dos pesos igual a zero levanta ValueError	Cumpre — checagem em media_ponderada.py:4-6, cobre [1,-1,0] e [0]
+Observações (fora do Aceite, sem corrigir nada ainda):
+1. Escopo: este bloco não se aplica ao que escrevi nesta sessão (converte.py + test_converte.py); a media_ponderada.py já existia na pasta antes.
+2. Sem cobertura pytest: os testes são asserts inline no __main__, não um arquivo test_media_ponderada.py.
+3. Casos-limite não exigidos pelo Aceite: soma negativa de pesos ([2,-1]) é aceita; NaN nas notas propaga silenciosamente.
+Quer que eu crie o test_media_ponderada.py cobrindo os 3 critérios (+ casos-limite)? E se quiser, monto também o bloco Aceite correspondente para converte.py.
