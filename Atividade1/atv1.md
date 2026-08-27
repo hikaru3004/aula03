@@ -1,50 +1,88 @@
-Exercicio 1
-Passo 1
-Criou o arquivo converte.py
+# Exercício 1 — Conversor de Temperatura
 
-Passo 2. 
-Linguagem: Python.
-Unidades: Celsius (°C), Fahrenheit (°F) e Kelvin (K).
-Formato de saída: mostra o valor com duas casas decimais, por exemplo: 25.00°C = 77.00°F.
-Entrada inválida: o programa captura o erro com try/except e mostra uma mensagem de erro, em vez de encerrar imediatamente.
-O que não estava no pedido: o código adicionou várias decisões por conta própria, como:
-interface interativa pelo terminal;
-opção "sair";
-conversão de vírgula para ponto (25,5);
-mensagens como "Até logo!";
-tratamento de Ctrl+C e EOF;
-função genérica converter();
-aceitação de letras minúsculas e espaços nas escalas.
+## Passo 1 
 
-Passo 3
-Criou o arquivo conversor_temperatura.py
+Foi criado o arquivo:
 
-Passo 4  
-Exemplo 1 — “crie um conversor de temperatura”
+```text
+converte.py
+```
 
-O agente decidiu sozinho como o conversor funcionaria, pois o pedido era muito aberto. Ele escolheu:
+---
 
-usar Python;
-criar conversões entre C, F e K;
-fazer uma interface interativa no terminal;
-pedir valor, origem e destino ao usuário;
-criar a opção "sair";
-aceitar vírgula em números decimais;
-formatar o resultado com duas casas decimais;
-definir as mensagens de erro;
-criar uma função genérica converter().
+## Passo 2 
 
-Principal decisão: o agente teve que inventar praticamente toda a especificação do sistema.
+### Especificações definidas
 
-Exemplo 2 — Prompt detalhado
+- **Linguagem:** Python.
+- **Unidades:** Celsius (°C), Fahrenheit (°F) e Kelvin (K).
+- **Formato de saída:** o valor deve ser apresentado com duas casas decimais.
+  - Exemplo: `25.00°C = 77.00°F`.
+- **Entrada inválida:** o programa deve capturar erros utilizando `try/except` e apresentar uma mensagem de erro, em vez de encerrar imediatamente.
 
-Aqui você já definiu linguagem, arquivo, funcionamento, validações e critérios de aceite. Mesmo assim, o agente decidiu sozinho alguns detalhes, como:
+### Decisões adicionadas pelo agente
 
-aceitar unidades em letras minúsculas;
-aceitar vírgula como separador decimal;
-criar --help, -h, ajuda e --ajuda;
-definir códigos de saída 0 e 1;
-enviar erros para stderr;
-validar o zero absoluto também em Fahrenheit e Kelvin;
-adicionar tolerância 1e-9 para comparação;
-criar uma estrutura interna com várias funções de validação.
+Além do que foi solicitado, o código incorporou algumas funcionalidades e decisões por conta própria:
+
+- Interface interativa pelo terminal.
+- Opção `"sair"`.
+- Conversão de vírgula para ponto em números decimais, como `25,5`.
+- Mensagens adicionais, como `"Até logo!"`.
+- Tratamento de `Ctrl+C` e `EOF`.
+- Criação de uma função genérica `converter()`.
+- Aceitação de letras minúsculas e espaços nas escalas.
+
+---
+
+## Passo 3
+
+Foi criado o arquivo:
+
+```text
+conversor_temperatura.py
+```
+
+---
+
+## Passo 4
+
+### Exemplo 1 — Prompt: “crie um conversor de temperatura”
+
+Nesse caso, o pedido era bastante aberto. Por isso, o agente precisou tomar praticamente todas as decisões relacionadas à especificação e ao funcionamento do sistema.
+
+O agente decidiu:
+
+- Utilizar **Python**.
+- Criar conversões entre **Celsius, Fahrenheit e Kelvin**.
+- Desenvolver uma interface interativa no terminal.
+- Solicitar ao usuário o valor, a unidade de origem e a unidade de destino.
+- Criar a opção `"sair"`.
+- Aceitar vírgula em números decimais.
+- Formatar os resultados com duas casas decimais.
+- Definir as mensagens de erro.
+- Criar uma função genérica `converter()`.
+
+**Principal decisão:** como o pedido era muito aberto, o agente teve que inventar praticamente toda a especificação do sistema.
+
+---
+
+### Exemplo 2 — Prompt detalhado
+
+No prompt detalhado, a IA definiu previamente diversos aspectos do sistema, incluindo:
+
+- Linguagem de programação.
+- Arquivo a ser criado.
+- Funcionamento esperado.
+- Validações.
+- Critérios de aceite.
+
+Mesmo com uma especificação mais detalhada, o agente ainda tomou algumas decisões de implementação por conta própria:
+
+- Aceitar unidades em letras minúsculas.
+- Aceitar vírgula como separador decimal.
+- Criar as opções `--help`, `-h`, `ajuda` e `--ajuda`.
+- Definir códigos de saída `0` e `1`.
+- Enviar mensagens de erro para `stderr`.
+- Validar o zero absoluto também em Fahrenheit e Kelvin.
+- Adicionar uma tolerância de `1e-9` para comparações.
+- Criar uma estrutura interna composta por várias funções de validação.
