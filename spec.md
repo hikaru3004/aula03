@@ -1,8 +1,7 @@
-# spec.md
-
 # Especificação Funcional: Sistema de Acompanhamento de Notas
 
 ## 1. Visão Geral e Arquitetura
+
 * **Plataforma:** Interface de Linha de Comando (CLI) baseada em Python.
 * **Persistência:** Arquivos JSON locais armazenados no diretório `data/` (`data/sistema.json`).
 * **Arredondamento:** Médias calculadas e exibidas com 2 casas decimais via arredondamento padrão *half-up* (`ROUND_HALF_UP`).
@@ -26,16 +25,19 @@
 ## 3. Regras de Negócio e Definições Matemáticas
 
 ### 3.1. Cálculo da Média Ponderada Parcial
+
 $$\text{Média} = \frac{\sum (\text{Nota}_i \times \text{Peso}_i)}{\sum \text{Peso}_i}$$
 *(Considerando apenas as avaliações $i$ que possuem nota efetivamente registrada).*
 
 ### 3.2. Regras de Classificação
+
 * **Aprovado:** $\text{Média} \ge \text{Limite de Aprovação}$
 * **Exame:** $\text{Limite de Exame} \le \text{Média} < \text{Limite de Aprovação}$
 * **Reprovado:** $\text{Média} < \text{Limite de Exame}$
 * **Pendente:** Nenhuma avaliação com nota lançada.
 
 ### 3.3. Intervalo da Zona de Risco
+
 $$\text{Zona de Risco} = [\text{Limite de Aprovação} - 0.50, \text{Limite de Aprovação})$$
 
 ---
