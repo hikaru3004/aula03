@@ -1,4 +1,8 @@
 # Observações — Aula 03
+Atividade 1, 2 e 3
+Modelo usado: Muse Spark 1.2 Free
+
+Atividade 4, 5, 6, 7
 Modelo usado: NVIDIA Nemotron modelo free e ox alpha free
 
 Ex4 (Delimitadores): Sem delimitador, ele classificou o texto e comentou a tentativa por ter identificado a injeção de prompt; com delimitador, ele limitou-se a interpretar o conteúdo dentro das tags e o classificou como misto.  
